@@ -1,0 +1,46 @@
+{% extends "blueprint.html"%}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{%block header%}
+    <form action ="/" method = "post">
+            <nav class = "category_navbar">
+            <button name = "category" value = "all">All</button>
+                {%for product in category%}
+                <button name = "category" value = "{{product}}">{{product}}</button>
+                {%endfor%}
+            <button name = "category" value = "recommend">Recommended</button>
+        </nav>
+    </form>
+
+{%endblock%}
+
+{% block main %}
+    <main id = "index_main">
+        <!-- <nav class = "category_navbar">
+                <h3>Type of product</h3>
+                <h3>Description</h3>
+                <h3>item's number</h3>
+                <h3>Date</h3>
+        </nav> -->
+
+            {% for product in products %}
+            <div class = "product_main_div">
+                <a href= "/details/{{product.id}}">
+
+                <div>
+                    <h2>{{loop.index}}.{{product.product_header}}</h2>
+                    <ul>
+                    <li><p>Type: {{product.type}}</p></li>
+                    <li><p>Amount: {{product.number}}</p></li>
+                    <li><p>Date: {{product.date}}</p></li>
+                </ul>
+                </div>
+            </a>
+            </div>
+        {%endfor%}
+
+    </main>
+{%endblock%}

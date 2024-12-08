@@ -1,0 +1,68 @@
+{% extends "blueprint.html"%}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+
+{% block main %}
+<main class = "profile_main">
+    <h1>Profile</h1>
+        <div class = "profile_div_align">
+    <div class = "profile_main_div">
+        <div class = "info_div">
+            {%for person in humen%}
+            <div>
+                <span class = "span_before">Mr/Ms.</span>
+                <div>
+                    <p>{{person.name}}</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Gender:</span>
+                <div>
+                    <p>{{person.gender}}</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Cash:</span>
+                <div>
+                    <p>{{person.cash}}$</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Email:</span>
+                <div>
+                    <p>{{person.email}}</p>
+                </div>
+            </div>
+            <div style = "margin-bottom:10px;">
+                <span class = "span_before" >Phone:</span>
+                <div>
+                    <p>{{person.phone}}</p>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    {% if not number %}
+        <div id = "profile_addcash_div">
+            <fieldset>
+                <legend>Add cash($)</legend>
+                <h3 class = "error" id ="add_cash_error"></h3>
+            <form action= "/profile"  method = "post">
+                <input type = "text" placeholder="Cash($)"  name = "cash" id = "user_cash">
+                <button type = "submit">Add Cash</button>
+            </form>
+        </fieldset>
+        </div>
+
+
+    {%endif%}
+
+
+
+</main>
+{%endblock%}

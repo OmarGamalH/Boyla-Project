@@ -1,0 +1,399 @@
+:root{
+    --theme : #024950
+}
+
+
+
+#navbar{
+    display:flex;
+    justify-content:space-between;
+    border-bottom: 2px var(--theme) solid;
+
+}
+body , html{
+    padding:0px;
+    margin:0px;
+
+}
+
+#body_log{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header header header" ". main ." "footer footer footer";
+}
+#body_log > header{
+    grid-area:header
+}
+#body_log > main{
+    grid-area: main;
+}
+#body_log > footer{
+    grid-area:footer;
+}
+
+.body_log > header > #navbar > div{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.body_log > header > #navbar > div >  a{
+    text-decoration:none;
+    color:black;
+    padding:10px;
+    transition-duration:.5s;
+    transition-property: all;
+    border:2px black solid;
+    margin-right:10px;
+}
+
+.body_log > header > #navbar > div >  a:hover{
+    padding:10px;
+    background-color:#063970;
+    box-shadow:5px 5px black;
+    color:white;
+    border:2px white solid
+ }
+
+#navbar > a >img{
+    width:70px;
+    height:70px;
+
+}
+#navbar > a > h3 {
+    color:black;
+}
+#navbar > a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+
+}
+
+.main_div , #register_div {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+
+
+}
+.main_div > form  , #register_div > form{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+
+}
+
+.main_div form input{
+   margin:10px;
+   padding:10px;
+   background-color:transparent;
+   border:2px black solid;
+   border-radius:30px;
+    transition-duration:1s;
+    transition-property:all;
+    width:fit-content;
+}
+.main_div form input:valid {
+    border:2px green solid;
+}
+
+
+
+
+.login_main {
+    border:2px black solid;
+    border-radius:30px;
+    box-shadow:5px 5px var(--theme);
+    margin:60px 0px;
+}
+.main_div form div{
+    display:flex;
+    width:100%;
+    justify-content:center;
+}
+#password_change button{
+    margin-top:10px;
+
+}
+.main_div form div button , .main_div #password_change button{
+    padding:10px;
+    background-color: #024950;
+    color:white;
+    border:none;
+    cursor:pointer;
+    box-shadow:2px 2px black;
+    transition-duration:.5s;
+    transition-property: all;
+    border-radius:10px;
+    margin-bottom:10px
+}
+
+.main_div form div button:hover , .main_div #password_change button:hover{
+    padding:20px;
+    box-shadow:2px 2px gray;
+}
+
+
+.main_div > form > select{
+    margin:10px;
+    padding:10px;
+    background-color:transparent;
+   border:1px black solid;
+
+}
+
+.category_navbar{
+    display:flex;
+    justify-content:space-around;
+    border-bottom: 2px var(--theme) solid;
+    position:sticky;
+    top:0;
+}
+.category_navbar > button{
+    padding:10px 20px;
+    margin:10px;
+    background-color:white;
+    border:2px var(--theme) solid;
+    cursor:pointer;
+    border-radius:10px;
+    transition-duration:.5s;
+}
+.category_navbar > button:hover{
+    padding:20px 30px;
+    box-shadow:10px 10px var(--theme)
+
+}
+
+
+.profile_main > h1 , #add_main > h1 , #product_main > h1{
+    border-bottom:2px var(--theme) solid;
+    text-align:center; padding:10px 0px; margin:0px;
+}
+.profile_div_align{
+    display:flex;
+    justify-content:center;
+}
+
+.profile_main_div{
+    display:grid;
+    grid-template-columns: 1fr 0fr;
+    margin-top:10px;
+    border:2px var(--theme) solid;
+    width:fit-content;
+
+}
+
+.info_div{
+    display:grid;
+    width:fit-content;
+
+}
+.info_div > div{
+    display:flex;
+    flex-direction:row;
+    margin-top:10px;
+    border:1px black solid;
+    height:fit-content;
+    padding:10px;
+    margin:5px 10px;
+
+}
+
+.span_before{
+    display:block;
+    background-color:var(--theme);
+    text-align:center;
+    padding:10px;
+    color:white;
+}
+.info_div div p{
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+
+}
+.info_div div > div{
+    text-align: center;
+    width: 100%;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border: 2px var(--theme) solid;
+    padding: 10px;
+}
+
+
+
+#other_body{
+    display:grid;
+    grid-template-rows:0fr 1fr 0fr;
+
+}
+
+#add_main{
+    display:grid;
+    grid-template-rows: 0fr 1fr;
+}
+#add_main > div{
+    display:grid;
+    grid-template-areas:
+        '. . .'
+        '. field .'
+        '. . .';
+    grid-template-rows: 0fr 1fr 0fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin:10px;
+}
+#add_main > div > fieldset{
+    grid-area:field;
+}
+
+#product_form{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+#product_form > select , #product_form > input{
+    margin:10px;
+    padding:10px;
+
+}
+
+#form_div{
+    display:flex;
+    justify-content:center;
+}
+#textarea_div{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+
+}
+#add_div{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+
+#profile_div_align{
+    display:flex ; justify-content:center;
+}
+textarea{
+    width:fit-content;
+    resize:none;
+    margin:10px;
+}
+#add_button_div{
+    display:flex;
+    justify-content:center;
+
+}
+#add_button_div > button{
+    padding:10px;
+    margin:10px;
+    background-color:white;
+    border:2px var(--theme) solid;
+    cursor:pointer;
+
+}
+
+
+
+.links{
+    color:black;
+    text-decoration:none;
+
+}
+
+#profile_addcash_div{
+    display:flex;
+    justify-content:center;
+    margin:10px;
+}
+
+
+#profile_addcash_div > fieldset > form > input , button {
+    width:fit-content;
+    padding:10px;
+    margin:10px;
+}
+#product_main_div{
+    margin:30px;
+
+
+}
+
+
+
+.category_navbar > h3{
+    margin-left:5px;
+}
+
+#index_main{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+
+}
+.product_main_div > a{
+    color:black;
+    text-decoration:none;
+}
+#index_main >div {
+    display:flex;
+    flex-direction:column;
+    border:2px var(--theme) solid;
+    justify-content:space-around;
+    cursor:pointer;
+    padding:5px;
+    margin:5px;
+    width:43ch;
+    height:200px;
+    border-radius:20px;
+    box-shadow:5px 5px var(--theme);
+    transition-duration:.5s;
+    transition-property:all;
+}
+#index_main >div:hover{
+    padding:10px;
+
+}
+
+.class_solve{
+    text-wrap:wrap
+}
+
+#register_password_div{
+    display:flex;
+    flex-direction:column;
+    width:fit-content;
+}
+.error{
+    display:none;
+    color:red;
+    text-align:center;
+}
+#detalis_main_div{
+    margin:0px 30px;
+    width:fit-content;
+}
+#details_div{
+    display:grid;
+
+}
+
+.center{
+    display:flex;
+    justify-content:center;
+
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href = "../static/styles.css" rel ="stylesheet">
+        <title>
+            Boyla: {%block title%}{%endblock%}
+        </title>
+        <link rel = "icon" href = "../static/icon.png" type = "image/icon">
+    </head>
+    <body id = "body_log" class = "body_log">
+        <header>
+            <nav id = "navbar">
+                <a href = "/login"><img src = "../static/grocery.gif" alt = "Boyla logo"><h3>Boyla</h3></a>
+                <div>
+                    <a href = "/register">Register</a>
+                    <a href = "/login">Log in</a>
+                </div>
+            </nav>
+            <nav class = "body_log">
+                {% block nav %}{%endblock%}
+            </nav>
+        </header>
+        {%block main%}{%endblock%}
+        <footer>
+        </footer>
+        <script src = "../static/script.js"></script>
+    </body>
+</html>

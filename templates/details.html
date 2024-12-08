@@ -1,0 +1,57 @@
+{% extends "blueprint.html"%}
+
+{% block title %}
+    Product
+{% endblock %}
+
+
+{% block main %}
+<main class = "profile_main">
+    <h1>Product</h1>
+    <div class = "center">
+    <div  id = "detalis_main_div">
+        <div class = "info_div" id = "details_div">
+            {%for product in products%}
+            <div>
+                <span class = "span_before">short Description:</span>
+                <div>
+                    <p>{{product.product_header}}</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Type</span>
+                <div>
+                    <p>{{product.type}}</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Price</span>
+                <div>
+                    <p>{{product.price}}$</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Number of items</span>
+                <div>
+                    <p>{{product.number}}</p>
+                </div>
+            </div>
+            <div>
+                <span class = "span_before">Seller</span>
+                <div>
+                    <a href = "/profile/{{person_selling}}">SELLER</a>
+                </div>
+            </div>
+            <div style = "margin-bottom:10px;" class = "class_solve">
+                <span class = "span_before" >long description</span>
+                <div class = "class_solve">
+                    <p class = "class_solve"> {{product.description}}</p>
+                </div>
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    </div>
+</main>
+{%endblock%}

@@ -1,0 +1,25 @@
+{% extends "log_blueprint.html"%}
+
+{% block title %}
+    Login
+{% endblock %}
+
+
+{% block main %}
+    <main class = "login_main">
+        <div class = "main_div">
+        <h1>Login</h1>
+        <h3 class = "error" id = "login_error">error</h3>
+        <form action = "/logingin" method = "post" id = "login_form">
+                <input type = "email" autocomplete = "off" name = "email" placeholder = "Email" pattern = ".+@.+\..+"  id = "login_email" required>
+                <input type = "password" autocomplete = "off" name = "password" placeholder = "Password" pattern = "[a-zA-Z0-9]{5,}" id = "login_password" required>
+                <div>
+                    <button type = "submit">Log in</button>
+                </div>
+        </form>
+        <form action = "/password" id = "password_change">
+            <button type = "submit">Change Password</button>
+        </form>
+        </div>
+    </main>
+{%endblock%}

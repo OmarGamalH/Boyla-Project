@@ -1,0 +1,47 @@
+{% extends "blueprint.html"%}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+
+{% block main %}
+<main id = "add_main">
+    <h1>Add</h1>
+        <div>
+            <fieldset>
+                <legend>Info</legend>
+                <h3 class = "error" id = "add_error">error</h3>
+                <div id = "add_div">
+                    <div id = "form_div">
+            <form action = "/add" method = "post" id ="product_form">
+            <select name = "product" id = "add_select">
+                <option selected disabled value = "not_selected">Product</option>
+                {% for product in products%}
+                    <option name = "product">{{product}}</option>
+                {%endfor%}
+            </select>
+                <input type ="text" Placeholder = "Price in dollar($)"   name = "price" id = "add_price" required>
+                <input type ="number" Placeholder = "Amount"  min = "1" name = "number" id = "add_number" required>
+            </div>
+            <div id = "textarea_div">
+                    <div style = "display:flex ; flex-direction:column;">
+                        <label for = "short_textarea" >Short description:</label>
+                <textarea maxlength = "40"  Placeholder="Describe your product for a header, Max of letters is 40" for="product_form" name = "short_description" cols = "30" rows = "2" id = "short_textarea" required></textarea>
+            </div>
+                <div style = "display:flex ; flex-direction:column;">
+                    <label for = "long_textarea">Long description:</label>
+                <textarea maxlength = "500"  Placeholder="Describe your product Max of letters is 500" for = "product_form" name = "long_description" cols = "40" rows = "6" id = "long_textarea" required></textarea>
+            </div>
+    </div>
+        <div id = "add_button_div">
+            <button type = "submit">Add item</button>
+        </div>
+        </form>
+
+    </div>
+    </fieldset>
+        </div>
+</main>
+
+{%endblock%}

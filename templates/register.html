@@ -1,0 +1,36 @@
+{% extends "log_blueprint.html"%}
+
+{% block title %}
+    Register
+{% endblock %}
+
+
+
+{% block main %}
+    <main class = "login_main">
+        <div class = "main_div">
+        <h1>Register</h1>
+        <h3 id = "register_error" class = "error">error</h3>
+        <form action = "/login" method = "post" id = "register_form">
+                <input type = "text" autocomplete = "off" name ="first_name" placeholder ="First Name" pattern = "\S+"  id = "register_first_name" required>
+                <input type = "text" autocomplete = "off" name ="surname" placeholder ="Surname" pattern = "[a-z A-Z]+"  id = "register_second_name" required>
+                 <input type = "email" autocomplete = "off" name = "email" placeholder = "Email" pattern = ".+@.+\..+"  id = "register_email" required>
+                 <input type = "text" autocomplete = "off" name = "phone" placeholder = "Phone(EX:+201021619970)" pattern = "\+?\d+"  id = "register_phone" required>
+                    <div id = "register_password_div">
+                            <div>
+                                <input type = "password" autocomplete = "off" name = "password" placeholder = "Password(length 5 or more)" pattern = "[a-zA-Z0-9]{5,}"  id = "register_password" required>
+                            </div>
+                                <span id = "register_under_password" style = "text-align:center;"></span>
+                    </div>
+                        <select id = "register_gender_select" name = "gender">
+                    <option selected disabled  value = "not_selected">Gender</option>
+                    <option  value = "Male">Male</option>
+                    <option  value = "Female">Female</option>
+                </select>
+                <div>
+                    <button type = "submit" id = "register">Register</button>
+                </div>
+        </form>
+        </div>
+    </main>
+{%endblock%}
